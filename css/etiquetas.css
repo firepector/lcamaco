@@ -1,0 +1,533 @@
+body {
+  margin: 0;              /* Margen lateral de 20px; arriba y abajo 0 */
+  padding: 0;                  /* Sin espacio interno */
+  font-family: Montserrat;     /* Fuente personalizada */
+  font-size: 12px;             /* Tamaño base del texto */    
+  width: 100%;
+}
+
+
+body.bodypages{
+  background-image: none;
+  background-color: dimgray;
+  position: relative;
+  z-index: 10;
+  
+}
+
+html, body {
+  height: 100% !important;
+  overflow: auto;
+  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+}
+
+/* Oculta la barra de scroll en Chrome, Safari y Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ######### CONTENEDOR TOTAL ######### */
+/* Contenedor principal centrado y con ancho fijo */
+.contenedor {  
+  width: 62%;                 /* Ancho del contenedor: 78% del ancho de la ventana */
+  padding: 0;                  /* Sin espacio interior */
+  margin: auto;                /* Centrado horizontalmente */
+  min-height: 100%;               /*Altura total de la ventana - era 100vh */
+  display: grid;
+  grid-template-rows: 10% 30% auto 6vh;
+  grid-template-columns: 28% 72%;
+  background-color: white;
+}
+
+/*################################# MENU- INICIO ####################################*/
+
+.left{
+  width: 100%;
+  grid-row: 1/5;
+  grid-column: 1/2;
+  background-color: #2f2f39; 
+}
+
+header {
+  width: 100%;                                /* Ancho igual al contenedor */
+  height: 100%;                               /* Altura fija */    
+  grid-row: 1;
+  grid-column: 2/3;
+}
+
+.header {
+  font-size: 0.75rem;          /* Tamaño de texto del encabezado */ 
+}
+
+nav {
+  flex-grow: 1;                       /* Ocupará todo el espacio horizontal restante */
+  background: rgb(255, 255, 255);   /* Fondo blanco */
+  box-shadow: none !important;        /* Elimina cualquier sombra por defecto de Materialize */
+  height: 100%;
+}
+
+.nav-wrapper {
+  box-shadow: none !important; /* También elimina la sombra interna de .nav-wrapper */  
+}
+
+nav ul {
+  display: flex;               /* Flex para los elementos del menú */
+  flex-wrap: wrap;             /* Permitir que los ítems salten de línea si no entran */
+  justify-content: flex-end;   /* Alineación del menú hacia la derecha */
+  align-items: flex-end;       /* Alinea los ítems en la parte inferior */
+  gap: 2px;                    /* Espacio entre ítems del menú */
+  list-style: none;            /* Quita los puntos de la lista */
+}
+
+/*Nativo de materializecss, lo usamos para desplazar un poco el menú y no este muy arriba*/
+/*nav ul.right {
+  padding-top: 4.75%;
+}*/
+
+nav ul li,
+nav ul li a {
+  font-size: 0.75rem;          /* Tamaño de texto del ítem */
+  font-weight: bold;           /* Negrita */
+  text-decoration: none;       /* Sin subrayado */
+  color: black;              /* Texto negro */
+}
+
+/* Quita bordes y sombras al hacer foco o hover sobre ítems */
+.dropdown-trigger:focus,
+.dropdown-content a:focus,
+.dropdown-content a:hover {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Estilo para ítems dentro del dropdown (submenús) */
+.dropdown-content li > a,
+.dropdown-content li > span {
+  font-size: 0.75rem;          /* Tamaño del texto */
+  color: steelblue;          /* Color de texto de submenú */
+  font-weight: bold;           /* Negrita */
+  display: block;              /* Que ocupen todo el ancho del contenedor */
+  white-space: nowrap;         /* No dividir texto en varias líneas */
+}
+
+/* Hover para submenús */
+.dropdown-content li > a:hover {
+  color: black;                /* Cambia el color al pasar el mouse */
+}
+
+
+/* Imagen del logo */
+img.imagenlogo { 
+  position: relative;
+  z-index: 10;
+  display: block;               /* Se comporta como un bloque */
+}
+
+.menuCabecera{
+  padding-right: 2.5%;
+  position: relative;
+  z-index: 20;
+}
+
+.miNombre{
+  background-color: #fbc840;;
+}
+
+.contenedorhome,.contenedorExperiencia, .contenedorConocimientos{
+  width: 72%;
+  margin: 0 auto; 
+  text-align: justify;
+  padding: 3.5%;
+}
+
+.contenedorhome{  
+  background: url(/img/fondoHome.svg) right no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.contenedorConocimientos{ 
+  min-height: 100vh;
+}
+
+.habilidadesTecnicas{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.articuloDividido1,.articuloDividido2{
+  
+  flex: 1 1 50%; 
+}
+
+.collapsible-header{
+  display: flex;
+  align-items: center;
+}
+
+.collapsible-body ul li{
+  font-size: 0.75rem;  
+  padding-bottom: 3%;
+  display: flex;
+  align-items: center;
+}
+
+.collapsible-body>ul>li i{
+  padding-right: 4%;
+}
+
+.cajaRedonda{
+  width: 100%;
+  min-height: 95%;
+  font-size: 0.7rem;
+  font-weight: 600;  
+  text-align: left;
+  color: white;
+  border: 4px solid #f1cb5b;
+  border-radius: 1rem;
+  background-color: #f1cb5b;
+  padding: 5%;
+}
+
+
+footer{   
+  grid-row: 4;
+  grid-column: 2/3;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido{
+  grid-row: 3/5;
+  grid-column: 1/3;
+
+  display: grid;
+  grid-template-columns: 28% 72%; 
+}
+
+.aside{
+  grid-column: 1;
+  width: 100% !important;  
+  background-color: #2f2f39;
+  border: none;
+}
+
+.left,.aside p,.detalle1,.detalle2,.detalles {
+  color: white;
+}
+
+/* Contenido main */
+.main {  
+  padding: 0;                                     /* Espaciado superior */
+  width: 100%;  
+  min-height: 0;
+  grid-column: 2; 
+}
+
+h1{
+  font-size: 2.5rem;
+  padding: 5%;
+}
+
+h1 strong, h2 strong, h3 strong, h3,
+h4 strong, h5 strong{
+  font-weight: 700;
+}
+
+h2{
+  font-size: 1.5rem;
+  padding: 2% 5%;  
+}
+
+h3{
+  font-size: 1rem !important;
+  padding: 2% 5%;
+  text-align: center;
+}
+
+
+
+h4{
+  font-size: .75rem !important;
+}
+
+h5{
+  font-size: .7rem !important;
+}
+
+.hr-aside{
+  height: 3px;
+  border: none;
+  background-color: #fbc840;
+}
+
+.hr-main{
+  height: 3px;
+  border: none;
+  background-color: #2f2f39;
+}
+
+.detalle1{
+  padding: 28% 3% 0 5%;
+  margin: 0;
+}
+
+.detalle2{
+  grid-column: 2;
+  grid-row: 1;
+  padding: 3% 3% 0 5% !important;
+  margin: 0;
+}
+
+.detalle1 ul li,.detalle2 ul li{
+  padding: 4.2% 0;
+}
+
+.detalle2>ul>li, .detalles>ul>li {
+  display: flex !important;
+  align-items: center;
+}
+
+.dobleFila{
+  line-height: 0.2;
+}
+
+i.small{
+  vertical-align: middle;
+}
+
+.icono-item {
+  vertical-align: middle;
+  margin: 0 2px;
+  font-size: 1.8rem;
+}
+
+a{
+  color: inherit;
+}
+
+.designLeft{
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: auto 50%;
+}
+
+.barraVertical{
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  background-color: #fbc840;
+}
+
+.acerca>p{
+  line-height: 1.5;
+}
+
+.qr{
+  grid-row: 2;
+  grid-column: 1/3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr>img{
+  width: 45%;
+}
+.frase{
+  color: darkslategrey;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.titulo-seccion{
+  width: 100% !important;  
+}
+
+.titulo-seccion h3{
+  text-align: left;
+  padding: 0;
+}
+
+/*.titleCollapsible{
+  padding: 24px !important;
+}*/
+
+.texto-en-columnas {
+  width: 100%;
+  column-count: 1;                                        /* Divide el texto en 4 columnas */
+  column-gap: 2rem;                                     /* Espacio entre columnas */
+  text-align: justify;                                    /* Opcional: justifica el texto */ 
+}
+
+.caja{
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 0;
+}
+
+.boxDetails{
+  width: 100%;
+}
+
+.boxDetails>h5{
+  font-size: 0.92rem !important;
+  font-weight: 700;
+}
+
+.empresa{
+  color: gray;
+}
+
+.boxFecha{
+  width: 35%;
+  background-color: #fbc840;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articuloExp{
+  padding-bottom: 4%;
+}
+
+
+
+.collapsible-body ul li>.knowHow{
+  font-size: 0.75rem;  
+  padding-bottom: 3%;
+  line-height: 0.2rem;
+  text-align: left;
+}
+
+
+#indexIframe {  
+  width: 100%;                                      /* Ancho total del contenedor padre */  
+  min-height: 100%;                                  /* Altura mínima por si no se mide bien al inicio - era 571px */  
+  border: none;                                     /* Sin borde */
+  display: block;                                   /* Comportamiento en bloque */ 
+}
+
+.detalles{
+  padding-left: 24px;
+}
+
+.detalles ul li{
+  padding: 2.4% 0;
+}
+
+.qr-detalles{ 
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-detalles>img{
+   width: 35%;
+
+}
+
+
+
+/*#######################################################################*/
+/*#######################################################################*/
+/*######################      MEDIA QUERY       #########################*/
+/*#######################################################################*/
+/*#######################################################################*/
+
+/* Estilos responsive (comentados en caso desees activarlos luego) */
+@media screen and (max-width: 1200px) {
+  .contenedor, .contenedorhome, .contenedorExperiencia, .contenedorConocimientos {   
+    width: 100%;   
+  }
+}
+
+@media screen and (max-width: 992px) {
+ .contenedor, .contenedorhome, .contenedorExperiencia, .contenedorConocimientos {       
+    width: 100%;   
+  }
+
+    /*Va a darle color a los subitems ya que en el anterior los pusimos el texto de color blanco y en bold(negrita)*/
+  .miAcordionMenu ul li a {
+    color: #2f2f39;
+  }
+
+  .sidenav{
+    background-color: #2f2f39;
+  }
+
+  .sidenav li>a {
+    font-weight: bold;
+    color: whitesmoke;
+  }
+
+  .sidenav li>a>i.material-symbols-rounded {    
+    color: whitesmoke;
+  }
+
+
+  /* Estilos del menú hamburguesa */
+  .sidenav-trigger {
+    background-color: whitesmoke; /*Fondo del contorno*/
+    padding: 28px 28px;         /* Lo agrandamos un poquito*/
+    border-radius: 4px;
+    margin: 0 !important;
+    display: flex !important;   /*Lo alineamos con el logo*/
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 0;
+    top: 0px;
+  }
+
+  .sidenav-trigger .material-icons {
+  color: #2f2f39;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+}
+
+@media screen and (max-width: 766px) {
+
+  .contenedor{
+    display: grid;
+    grid-template-columns: 100% !important; /* Solo una columna */
+    grid-template-rows: 10% 30% auto 6vh;
+  }
+
+
+  .left, .aside{
+    display: none;    
+  } 
+
+  .miNombre, .main{
+    grid-column: 1/-1;
+  }
+
+  header {
+    width: 100%;                                /* Ancho igual al contenedor */
+    height: 100%;                               /* Altura fija */    
+    grid-row: 1;
+    grid-column: 1/-1;
+  }
+
+  .bodyDocument{
+    background: url(/img/documentacion.svg) !important;
+    background-repeat: repeat-y;
+    background-position: right top;    
+  }
+}
+

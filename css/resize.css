@@ -1,0 +1,27 @@
+/* Aplica solo cuando la clase in-iframe esté en <html> */
+
+.in-iframe body .contenedorhome {
+  width: 100%;                       /* Usa todo el ancho del iframe, elimina los márgenes */
+  margin: 0 auto !important;                    /* Centrado */  
+  overflow-x: hidden !important;                /* Previene desbordes */ 
+}
+
+
+.in-iframe .contenedorExperiencia {
+  width: 100% !important;                       /* Usa todo el ancho del iframe, elimina los márgenes */
+  margin: 0 auto !important;                    /* Centrado */
+  overflow-x: hidden !important;                /* Previene desbordes */
+
+}
+
+.in-iframe .contenedorConocimientos {
+  width: 100% !important;                       /* Usa todo el ancho del iframe, elimina los márgenes */
+  margin: 0 auto !important;                    /* Centrado */  
+  overflow-x: hidden !important;                /* Previene desbordes */
+}
+
+
+
+
+
+
