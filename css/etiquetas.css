@@ -498,6 +498,10 @@ a{
     align-items: center;
   }
 
+  .designSidenav{
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 766px) {
@@ -528,6 +532,10 @@ a{
     background: url(../img/documentacion.svg) !important;
     background-repeat: repeat-y;
     background-position: right top;    
+  }
+
+  .designSidenav{
+    display: block;
   }
 }
 
